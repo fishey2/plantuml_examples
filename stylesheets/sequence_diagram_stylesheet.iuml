@@ -1,0 +1,386 @@
+' Shade of White
+!define WHITE       #FFFFFF
+
+' Shade of Black
+!define BLACK       #1A1C20
+
+' Colour of error lines (Red preferred)
+!define ERROR       #D90429
+
+' Shades of Grey
+!define GREY        #8D99AE
+!define ALT_GREY_1  #687784
+!define ALT_GREY_2  #98A4AD
+!define ALT_GREY_3  #B3BBC1
+!define ALT_GREY_4  #DFE2E5
+!define ALT_GREY_5  #EDEFF1
+!define ALT_GREY_6  #F3F5F6
+!define ALT_GREY_7  #F9FAFB
+
+' Primary Colors
+!define PRIMARY        #1F648E
+!define ALT_PRIMARY_1  #31749c
+!define ALT_PRIMARY_2  #ACCAE8
+!define ALT_PRIMARY_3  #D4E4F3
+!define ALT_PRIMARY_4  #E6EFF8
+!define ALT_PRIMARY_5  #A4A8BB
+!define ALT_PRIMARY_6  #D4D8EB
+
+' Secondary Colour (Green)
+!define SECONDARY           #12692F
+!define ALT_SECONDARY_1     #1B9D46
+!define ALT_SECONDARY_2     #34C464
+!define ALT_SECONDARY_3     #99E1B1
+
+' Secondary Yellow Colors
+!define TERTIARY            #
+!define ALT_TERTIARY_1      #FFE8B4
+!define ALT_TERTIARY_2      #FFF1CC
+!define ALT_TERTIARY_3      #FFF8E8
+
+' Lines
+!define THICK_LINE  2
+!define THIN_LINE   1
+
+' Fonts
+!define FONT                Arial
+!define FONT_SIZE_TITLE     48
+!define FONT_SIZE_HEADING_1 26
+!define FONT_SIZE_HEADING_2 22
+!define FONT_SIZE_LARGE     18
+!define FONT_SIZE_NORMAL    14
+!define FONT_SIZE_SMALL     12
+
+' Padding and Justification
+!define DEFAULT_PADDING     1
+!define DEFAULT_ALIGNMENT   LEFT
+
+' Removes boxes from the bottom of sequence diagram
+hide footbox
+
+' Padding between participants
+skinparam ParticipantPadding    10
+
+' Padding between boxes
+skinparam BoxPadding            10
+
+' Standard padding value
+skinparam padding               2
+
+' Adds shadows around objects (i.e. participants, notes, etc)
+skinparam Shadowing             true
+
+' Default styling
+skinparam default {
+
+    'Font Style
+    FontColor           BLACK
+    FontName            FONT
+    FontSize            FONT_SIZE_NORMAL
+    FontStyle           BOLD
+
+    ' Text Alignment Value (LEFT, RIGHT, CENTRE, JUSTIFIED)
+    ' This value will change the alignment of things like Notes
+    TextAlignment       DEFAULT_ALIGNMENT
+}
+
+' Sequence Diagram Styling Overrides
+skinparam Sequence {
+
+    ' Overrides box styling
+    ' Example:
+    ' box
+    '     participant "A"
+    ' end box
+    BoxBackgroundColor                  ALT_GREY_6
+    BoxBorderColor                      ALT_GREY_5
+
+    ' Group blocks
+    ' Example
+    ' group "A group"
+        a -> b
+    ' end
+    GroupBackgroundColor                SECONDARY
+    GroupBodyBackgroundColor            transparent
+
+    ' The Group border style
+    GroupBorderColor                    SECONDARY
+    GroupBorderThickness                THICK_LINE
+
+    ' For else blocks (i.e. else "Something Else")
+    GroupFontColor                      GREY
+    GroupFontName                       FONT
+    GroupFontSize                       FONT_SIZE_NORMAL
+    GroupFontStyle                      BOLD
+
+    ' Overrides ReferenceHeaderFontColor
+    GroupHeaderFontColor                WHITE
+    GroupHeaderFontName                 FONT
+    GroupHeaderFontSize                 FONT_SIZE_NORMAL
+    GroupHeaderFontStyle                BOLD
+
+    ' Reference block
+    ' Example
+    ' ref over a
+    '   A long
+    '   message
+    ' end ref
+    ReferenceAlignment                  DEFAULT_ALIGNMENT
+
+    ' Override for ReferenceBackgroundColour exists but does not work
+    ReferenceBackgroundColor            WHITE
+
+    ' Reference border style
+
+    ReferenceBorderColor                ALT_SECONDARY_1
+    ReferenceBorderThickness            THICK_LINE
+
+    ' Reference text style (overrides default)
+    ReferenceFontColor                  BLACK
+    ReferenceFontName                   FONT
+    ReferenceFontSize                   FONT_SIZE_SMALL
+    ReferenceFontStyle                  BOLD
+
+    ' Reference Header (box) background colour
+    ReferenceHeaderBackgroundColor      ALT_SECONDARY_1
+
+    ' Reference Header (box) text style (Overriden by group)
+    ReferenceHeaderFontColor            WHITE
+    ReferenceHeaderFontName             FONT
+    ReferenceHeaderFontSize             FONT_SIZE_NORMAL
+    ReferenceHeaderFontStyle            BOLD
+
+    ' Overrides default, Actor, Participant and Collection stereotype style
+    StereotypeFontColor                 ALT_GREY_3
+
+    ' Overrides all other stereotypes
+    StereotypeFontName                  FONT
+    StereotypeFontSize                  FONT_SIZE_SMALL
+    StereotypeFontStyle                 NORMAL
+
+    ' Title Style (overrides default)
+    TitleFontColor                      PRIMARY
+    TitleFontName                       FONT
+    TitleFontSize                       FONT_SIZE_TITLE
+    TitleFontStyle                      BOLD
+
+    ' Arrow message override for text alignment ( a -> b: Message)
+    ' LEFT, RIGHT, or CENTER
+    MessageAlignment                    CENTER
+
+    ' Overrides the default arrow style (i.e. a -> b)
+    ArrowThickness                      THICK_LINE
+    ArrowColor                          PRIMARY
+
+   ' Overrides the default lifeline
+   ' Example
+   ' a -> b
+   '     activate b
+   ' b -> a
+   '     deactivate b
+    LifeLineBorderThickness             THIN_LINE
+    LifeLineBorderColor                 ALT_GREY_3
+    LifeLineBackgroundColor             ALT_GREY_4
+}
+
+' Overrides the styling for Notes (i.e. note left: some note)
+skinparam note {
+
+    ' Note Font Style (overrides default)
+    FontColor           BLACK
+    FontName            FONT
+    FontSize            FONT_SIZE_SMALL
+    FontStyle           BOLD
+
+    ' Note style
+    BackgroundColor     ALT_TERTIARY_3
+    BorderColor         ALT_TERTIARY_2
+    BorderThickness     THIN_LINE
+}
+
+' Overrides the styling for Arrows (i.e. a -> b: "Message")
+skinparam arrow {
+
+    ' Text styling above arrows (overrides default, "Message")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_SMALL
+    FontStyle           BOLD
+}
+
+'''''''''''''''''''''
+' Participant Types '
+'''''''''''''''''''''
+
+' Overrides the styling for Participants (i.e. participant "A Person" as person)
+skinparam participant {
+
+    ' Box styling
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Test styling
+    FontColor           WHITE
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Entity Stereotype (<<hello>>)
+    ' Styling for participant stereotypes does not override
+
+    ' Override the padding values for participants
+    Padding             DEFAULT_PADDING
+}
+
+' Overrides the styling for Actors (i.e. actor "Steve" <<human>>)
+skinparam actor {
+
+    ' Actor Symbol Fill and Outline
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Text styling (overrides default, "Steve")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Actor Stereotype (<<human>>)
+    StereotypeFontColor ALT_GREY_3 ' Overriden by participant
+    StereotypeFontName  FONT
+    StereotypeFontSize  FONT_SIZE_SMALL
+    StereotypeFontStyle NORMAL
+}
+
+' Overrides the styling for Boudnaries (i.e. boundary "Fence" <<structure>>)
+skinparam boundary {
+
+    ' Overridden by entity
+
+    ' Boundary Symbol Fill and Outline
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Text styling (overrides default, "Fence")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Boundary Stereotype (<<structure>>)
+    StereotypeFontColor ALT_GREY_3
+    StereotypeFontName  FONT
+    StereotypeFontSize  FONT_SIZE_SMALL
+    StereotypeFontStyle NORMAL
+}
+
+' Overrides the styling for Controls (i.e. control "Group" <<binary>>)
+skinparam control {
+
+    ' Control Symbol Fill and Outline
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Text styling (overrides default, "Group")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Control Stereotype (<<binary>>)
+    StereotypeFontColor ALT_GREY_3
+    StereotypeFontName  FONT
+    StereotypeFontSize  FONT_SIZE_LARGE
+    StereotypeFontStyle NORMAL
+}
+
+' Overrides the styling for Entities (i.e. entity "Big Company" <<company>>)
+skinparam entity {
+
+    ' Entity Symbol Fill and Outline
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Text styling (overrides default, "Big Company")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Entity Stereotype (<<company>>)
+    StereotypeFontColor ALT_GREY_3
+    StereotypeFontName  FONT
+    StereotypeFontSize  FONT_SIZE_LARGE
+    StereotypeFontStyle NORMAL
+}
+
+' Overrides the styling for Databases (i.e. database "Postgresql Database" as pg)
+skinparam database {
+
+    ' Database Symbol Fill and Outline
+    BackgroundColor     PRIMARY
+    BorderColor         ALT_PRIMARY_1
+
+    ' Text styling (overrides default, "Postgresql Database")
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_LARGE
+    FontStyle           BOLD
+
+    ' Entity Stereotype (overrides default, <<pg>>)
+    StereotypeFontColor ALT_GREY_3
+    StereotypeFontName  FONT
+    StereotypeFontSize  FONT_SIZE_LARGE
+    StereotypeFontStyle NORMAL
+}
+
+' Overrides the styling for Collections (i.e. collections "Records" as rec <<database>>)
+skinparam collections {
+
+    ' Overrides default
+    BackgroundColor PRIMARY
+    BorderColor     ALT_PRIMARY_1
+
+    ' Text Style is inherited from Participant and cannot be overriden
+    ' FontColor           BLUE
+    ' FontName            FONT
+    ' FontSize            FONT_SIZE_LARGE
+    ' FontStyle           BOLD
+
+    ' Stereotype styling is inherited and cannot be changed here
+}
+
+' Footer style (i.e. header "Hello")
+skinparam header {
+
+    FontColor           GREY
+    FontName            FONT
+    FontSize            FONT_SIZE_SMALL
+    FontStyle           BOLD
+}
+
+' Footer style (i.e. footer "Goodbye")
+skinparam footer {
+
+    ' Footer text style override
+    FontColor           GREY
+    FontName            FONT
+    FontSize            FONT_SIZE_SMALL
+    FontStyle           BOLD
+}
+
+' Title style (i.e. title "A Title"
+skinparam Title {
+
+    ' Title background colour
+    BackgroundColor     WHITE
+
+    ' Overriden by sequence parameters
+    FontColor           PRIMARY
+    FontName            FONT
+    FontSize            FONT_SIZE_SMALL
+    FontStyle           BOLD
+
+    ' Adds padding to title
+    Padding             DEFAULT_PADDING
+}
