@@ -1,0 +1,17 @@
+@startuml
+' '@startuml' starts the plantuml diagram, it is required to view the content
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    ' Creates a title on the page called Hello World
+    title Hello World
+
+    ' Creates two participants
+    ' The 'a' will appear on the left with the same name
+    ' The 'b' will appear on the right with the same name
+    ' There will be a an arrow from the lifeline of a to the lifeline of b
+    a -> b
+
+' This ends the plantuml diagram, it is required to view the content
+@enduml
