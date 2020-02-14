@@ -4,6 +4,9 @@
     ' Includes the sequence_diagram_stylesheet from a gist
     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
 
+    ' Creates a header at the top of the page
+    header Hello World
+
     ' Creates a title on the page called Hello World
     title Hello World
 
@@ -12,6 +15,9 @@
     ' The 'b' will appear on the right with the same name
     ' There will be a an arrow from the lifeline of a to the lifeline of b
     a -> b
+
+    ' Creates a footer at the bottom of the page
+    footer RoboAutomator
 
 ' This ends the plantuml diagram, it is required to view the content
 @enduml

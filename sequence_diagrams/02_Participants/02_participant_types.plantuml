@@ -1,0 +1,42 @@
+@startuml
+
+
+' Includes the sequence_diagram_stylesheet from a gist
+!include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+
+' Beyond the standard participant box, there are different types of participant,
+' these include:
+' * participant (default)
+' * collections
+' * database
+' * entity
+' * boundary
+' * control
+' * actor
+header Participant Types
+
+    ' Using participants that you haven't defined yet will create items of a
+    ' default participant type
+    participant Participant
+
+    ' Collections usually defines collections such as Lists, Dictionaries, Maps
+    ' and Arrays
+    collections Collections
+
+    ' Usually defines data storage types such as databases
+    database "Database" as db
+
+    ' Usually defines a singular or separate object
+    entity "Entity" as ent
+
+    ' Usually defines systems that do not do any processing
+    boundary "Boundary" as bound
+
+    ' Usually defines items that go between boundaries and entities
+    control "Control" as cont
+
+    ' Usually defines a system actor, or something acting on the system
+    actor "Actor" as act
+
+@enduml

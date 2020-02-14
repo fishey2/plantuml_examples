@@ -1,4 +1,18 @@
 # plantuml_examples
 Simple worked examples using plantuml
 
-Live version of [Sequence Diagram Stylesheet](https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml) 
+Live version of [Sequence Diagram Stylesheet](https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml)
+
+## Configuring plantuml viewer in VSCode
+
+## Configuring plantuml viewer in IntelliJ
+
+## configuring plantuml viewer in atom
+Prerequisites JDK
+
+1. Installed plantuml-preview by ('peele')[]
+2. Installed language-plantuml for syntax highlighting
+3. Downloaded plantuml.jar
+4. Put jar into ${JAVA_HOME}/lib/plantuml.jar
+5. Change settings in Atom and add the path for plantuml.jar
+

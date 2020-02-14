@@ -17,7 +17,3 @@ To include the stylesheet example, use the [Live Include Stylesheet](https://gis
 @enduml
 ```
 ## Examples
-
-1. [Hello Sequence Diagram World](01_hello_world.plantuml)
-2. [Defining Participants](02_defining_participants.plantuml)
-3. [Participant Types](03_participant_types.plantuml)
