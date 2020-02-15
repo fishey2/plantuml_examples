@@ -1,0 +1,28 @@
+@startuml
+
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Boxing Participants
+
+    ' The collections participant will appear outside of the box
+    collections Collections
+
+    ' A box groups participants and will appear as a rectangle in the background
+    box
+
+        ' The database participant will appear within the box
+        database Database
+
+        ' The entity participant will appear within the box
+        entity Entity
+
+    ' To end the group you need to use the end box command
+    ' unlike groups, you need to specify the type for the end statement
+    end box
+
+    ' You are still able to refer to participants inside and outside of the box
+    Entity -> Collections
+
+@enduml

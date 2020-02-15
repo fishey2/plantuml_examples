@@ -5,7 +5,7 @@
     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
 
     ' Creates a header at the top of the page
-    header Hello World
+    header A Header
 
     ' Creates a title on the page called Hello World
     title Hello World
@@ -17,7 +17,7 @@
     a -> b
 
     ' Creates a footer at the bottom of the page
-    footer RoboAutomator
+    footer A Footer
 
 ' This ends the plantuml diagram, it is required to view the content
 @enduml

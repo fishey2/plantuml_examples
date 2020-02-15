@@ -1,0 +1,55 @@
+
+
+' Autonumber
+
+@startuml
+
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Arrow Messages
+
+    ' Collections Participant
+    collections Collections as col
+
+    ' Database Participant
+    database Database as db
+
+
+    ' Standard arrow with no message
+    col -> db
+
+        ' Standard return with no message
+        return
+
+    ' Standard arrow with message
+    col -> db : A Message
+
+        ' Adds a message to the return arrow
+        return Return Message
+
+
+    ' Adding autonumber to messages starting at 0
+    autonumber
+
+    ' This message will start with 1
+    col -> db : First Message
+
+        ' This message will start with 2
+        return Second Message
+
+
+    ' Formatting the autonumber
+    '   The <b> makes it bold (HTML Syntax)
+    '   The <font color=purple> can be used to change the colour of the autonumber text
+    '   We can also start at a different number, such as 300
+    autonumber "<b><font color=purple>[300]</font></b>"
+
+    ' This message will start with [301]
+    col -> db : First Message
+
+        ' This message will start with [302]
+        return Second Message
+
+@enduml

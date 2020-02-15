@@ -1,0 +1,32 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Arrow Line Types
+
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+
+
+    ' Standard arrow line style
+    ' Solid line based on the default style
+    p1 -> p2
+
+    ' Dashed arrow line style
+    ' Dot/Dash line based on the default style
+    p1 -->x p2
+
+    ' You can change the colour of the line to a custom colour
+    ' This example will change the colour of a solid arrow to purple
+    p1 -[#AA00FF]> p2
+
+    ' To change the colour to a define value (i.e. !define ERROR #FF0000)
+    ' You are able to use defined values from stylesheets and include files
+    p1 -[ERROR]-> p2
+
+@enduml

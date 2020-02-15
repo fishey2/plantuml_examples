@@ -1,0 +1,82 @@
+@startuml
+
+' Includes the sequence_diagram_stylesheet from a gist
+!include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+' Unstructured languages are notoriously difficult to keep 'Clean'
+
+' By 'Clean', I mean:
+'   * Readable
+'   * Understandable
+'   * Maintainable
+
+' This will cover some of the basic things that you can do to keep your code clean
+
+
+== Bad Example ==
+a->b++:Message
+return
+a -> c++
+return
+b<-a ++
+note left:Some note\n\ with new lines
+b->b+
+return
+return
+
+
+
+' Grouping items in groups is a better visualisation than using separators
+
+' Separators in sequence diagrams don't have style overrides, so you are
+' also stuck with the default style
+
+' Grouping also encases the entire script too, visually and in code
+group Good Example
+
+
+    ' Using indentation can be an easy way to clearly see how the sequence diagram
+    ' is being build up in terms of processes and lifelines
+
+
+    ' Spacing also allows for better readability
+    ' Putting spaces between the participants, arrows, actions, and messages
+    ' keeps the meanings separate and makes it more readable
+
+
+    a -> b ++ : Message
+
+        ' Specify what you are returning
+        ' This helps with maintaining the code as it gives you a reference point
+        return <what/why>
+
+
+    ' Have all of the arrows pointing the same way
+    ' It is preferred to have arrows go FROM left TO right
+    ' This makes it much easy to read
+    ' i.e. a goes to c
+    a -> c ++
+        return <what/why>
+
+
+    a -> b ++
+        note left
+            Prefer blocked notes as these
+            remain a lot more readable
+            than inline notes
+        end note
+
+        ' Indenting nested processes allows people to quicky see that b -> b
+        ' happens within the a -> b process
+        b -> b ++
+            return <what/why>
+
+        ' Use new lines to separate groups of items out to aid in peoples understanding
+
+        return <what/why>
+
+' When ending something, with indentation and the name of the item helps to know what it belongs to
+end group
+
+@enduml
+

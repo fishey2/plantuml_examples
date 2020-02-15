@@ -1,0 +1,54 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Arrow Types
+
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+
+
+    ' Standard arrow head type
+    ' Arrow appears on the Participant 2 side meeting lifeline
+    p1 -> p2
+
+    ' Terminates the arrow with an X
+    ' Usually used to end a flow
+    p1 ->x p2
+
+    ' Changes the style of the arrow head to line drawn
+    p1 ->> p2
+
+    ' Half of the standard arrow head type
+    ' `\` means that the half of the arrow will appear on the top side
+    ' `/` means that the half of the arrow will appear on the bottom side
+    '
+    ' Half arrows will only work on one side of the definition
+    ' The definition to the right will override the one to the left of the script
+    ' It will replace the leftmost definition with a standard arrow type
+    p1 -\ p2
+    p1 -/ p2
+
+    ' Half of the alternative arrow head style
+    ' `//` means that the half of the arrow will appear on the top side
+    ' `\\` means that the half of the arrow will appear on the bottom side
+    '
+    ' Half arrows will only work on one side of the definition
+    ' The definition to the right will override the one to the left of the script
+    ' It will replace the leftmost definition with a standard arrow type
+    p1 //- p2
+    p1 \\- p2
+
+    ' Terminates the standard arrow type with a circle sitting on the lifeline
+    p1 ->o p2
+
+    ' These styles can be used either side , or both sides, of the arrow definition
+    p1 <-> p2
+    p1 x<->o p2
+
+@enduml
