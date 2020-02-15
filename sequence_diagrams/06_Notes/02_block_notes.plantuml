@@ -1,0 +1,27 @@
+ @startuml
+
+     ' Includes the sequence_diagram_stylesheet from a gist
+     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+     header Block Notes
+
+     ' First participant
+     participant "Participant 1" as p1
+
+     ' Second participant
+     participant "Participant 2" as p2
+
+
+    note over p1: This is how you define an inline\n\ note. It is not readable when you\n\ have longer notes.
+
+
+    note over p2
+        This is how you can define
+        a multiline note using a note
+        block.
+
+        This is preferred over the inline
+        as it is more readable in code.
+    end note
+
+ @enduml

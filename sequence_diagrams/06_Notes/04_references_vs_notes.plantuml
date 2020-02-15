@@ -1,0 +1,30 @@
+ @startuml
+
+     ' Includes the sequence_diagram_stylesheet from a gist
+     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+     header References vs. Notes
+     ' A participant
+     participant "Participant 1" as p1
+
+    ' Notes have a Sticky Note type appearance
+    note over p1
+        This is how to define
+        a note.
+    end note
+
+    ' References take an appearance similar to groups
+    ' Where the name ref is put into the tab in the
+    ' top left of the box.
+    '
+    ' Note that these ref boxes do not act the same as
+    ' groups boxes.
+    '
+    ' The positioning of references is identical to that of notes
+    ' it is only the appearance that changes.
+    ref over p1
+        This is how to define a
+        ref.
+    end ref
+
+ @enduml

@@ -1,0 +1,58 @@
+ @startuml
+
+     ' Includes the sequence_diagram_stylesheet from a gist
+     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+     header Positioning Notes
+
+     ' First participant
+     participant "Participant 1" as p1
+
+     ' Second participant
+     participant "Participant 2" as p2
+
+    note over p1
+        I will appear over
+        Participant 1
+    end note
+
+    note over p2
+        I will appear over
+        Participant 1
+    end note
+
+    note over p1, p2
+        I will appear over
+        Participant 1 and
+        Participant 2
+    end note
+
+    note left of p1
+        I will appear left of
+        Participant 1's
+        lifeline
+    end note
+
+    note right of p2
+            I will appear right of
+            Participant 2's
+            lifeline
+    end note
+
+    p1 -> p2
+        note left
+            I will appear to the left
+            of the arrow from
+            Participant 1 to
+            Participant 2
+        end note
+
+    p2 -> p1
+        note right
+            I will appear to the right
+            of the arrow from
+            Participant 2 to
+            Participant 1
+        end note
+
+ @enduml

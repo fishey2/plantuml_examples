@@ -7,7 +7,7 @@
     ' 'Alt Grouping' will be added as a message next to (condition)
     ' This is the same with the rest of the following items
 
-    header Group Messages
+    header Else Splitting in Groups
 
     ' First participant
     participant "Participant 1" as p1
