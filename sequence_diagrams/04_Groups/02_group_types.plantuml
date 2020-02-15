@@ -1,0 +1,49 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Group Types
+
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+    ' A standard grouping
+    group group
+        p1 -> p2
+    end group
+
+    ' Group box with name opt
+    alt
+        p1 -> p2
+    end alt
+
+    ' Group box with name opt
+    opt
+        p1 -> p2
+    end opt
+
+    ' Group box with name loop
+    loop
+        p1 -> p2
+    end loop
+
+    ' Group box with name par
+    par
+        p1 -> p2
+    end par
+
+    ' Group box with name break
+    break
+        p1 -> p2
+    end break
+
+    ' Group box with name critical
+    critical
+        p1 -> p2
+    end critical
+
+@enduml

@@ -12,6 +12,8 @@
 
 ' This will cover some of the basic things that you can do to keep your code clean
 
+' As a general rule, I would avoid using the newpage command, most viewers do note
+' deal well with this. It is better to split your diagram up into smaller diagrams.
 
 == Bad Example ==
 a->b++:Message

@@ -1,0 +1,33 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    header Defining Groups
+
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+    ' Outside of the Group, will not appear in the box
+    p1 -> p2 ++ : Outside Group
+
+    ' This defines a group
+    ' Anything after the keyword 'group' will be written in the box name (top left)
+    group A Group
+
+        ' Inside the Group, will appear inside the box
+        return Inside Group
+
+        ' Defines a nested group
+        group Nested Group
+            p1 -> p1 : Inside nested group
+
+        ' Ends nested group
+        end group
+
+    end group
+
+@enduml

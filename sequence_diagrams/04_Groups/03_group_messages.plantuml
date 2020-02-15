@@ -1,0 +1,35 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    ' 'alt' will appear in the group name
+    ' 'Alt Grouping' will be added as a message next to (condition)
+    ' This is the same with the rest of the following items
+
+    header Group Messages
+    
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+    
+    ' There are two types of group messages, the first only exists for the 'group' keyword
+    ' and it adds it into the tab in the top left corner. 
+    ' In this example it will say Group Message in the tab.
+    group Group Message 
+        p1 -> p2
+    end group
+    
+    
+    ' The other type is for all of the other group types, which fix the tab name to the
+    ' type of group that you are using (i.e. 'alt'). 
+    ' Then the message is put next to the tab in Square parenthesis.
+    ' In this example Other Message will appear in Square parenthesis next to the tab.
+    alt Other Message
+        p1 -> p2
+    end alt
+    
+@enduml

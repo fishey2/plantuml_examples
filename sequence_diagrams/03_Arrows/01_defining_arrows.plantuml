@@ -25,6 +25,10 @@
     ' From Participant 2 to Participant 1
     p1 <- p2
 
+    ' Does the opposite of (returns from) the last operation
+    ' From Participant 1 to Participant 2
+    return
+
     ' To left of page
     ' From Participant 2 to Page left
     [<- p2

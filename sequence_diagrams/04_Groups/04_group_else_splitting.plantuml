@@ -1,0 +1,47 @@
+@startuml
+
+    ' Includes the sequence_diagram_stylesheet from a gist
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+    ' 'alt' will appear in the group name
+    ' 'Alt Grouping' will be added as a message next to (condition)
+    ' This is the same with the rest of the following items
+
+    header Group Messages
+
+    ' First participant
+    participant "Participant 1" as p1
+
+    ' Second participant
+    participant "Participant 2" as p2
+
+
+    ' Another useful part of groups is being able to separate them out by conditions
+    alt is true
+        p1 -> p2
+
+    ' Else breaks the box (works with other types of groups too)
+    ' Inserts a dotted line across the breadth of the group box
+    ' Everything after the 'else' keyword is added to a message just below the line
+    else is false
+        p1 -> p2
+
+    end group
+
+
+    ' The group can be split using else multiple times
+    opt parameter
+
+    else is 'a'
+        p1 -> p2
+
+    else is 'b'
+        p1 -> p2
+
+    else is 'c'
+        p1 -> p1
+
+    end group
+
+@enduml
+
