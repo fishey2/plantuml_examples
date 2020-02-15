@@ -1,0 +1,29 @@
+ @startuml
+
+     ' Includes the sequence_diagram_stylesheet from a gist
+     !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+
+     header Arrow Types
+
+     ' First participant
+     participant "Participant 1" as p1
+
+     ' Second participant
+     participant "Participant 2" as p2
+
+    ' Starts the lifeline for p1 and never finises, so fills the whole column
+    activate p1
+
+    ' Adds a first lifeline to Participant 2
+    p1 -> p2 ++ : Method call
+
+    ' Adds a second lifeline to Participant 2
+    p2 -> p2 ++ : Internal call
+
+    ' Stops the second lifeline on Participant 2
+    return Return from internal call
+
+    ' Stops the first lifeline on Participant
+    p2 -> p1 -- : Return from method
+
+ @enduml

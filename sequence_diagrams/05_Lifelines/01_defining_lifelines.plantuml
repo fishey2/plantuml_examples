@@ -14,24 +14,46 @@
      ' Third Participant
      database "Database" as db
 
+
+    ' There are two ways to manage lifelines:
+    '  * Using the 'activate', 'create', 'destroy' and 'deactivate' keywords
+    '  * Using the shortcuts '++', '**', '!!' and 'return' symbols and keywords
+
+
+    ' Activating and Deactivating
+
+    ' Adds lifeline block to p2
+    p1 -> p2
+        activate p2
+
+    ' Ends lifeline block on p2
+    p2 -> p1
+        deactivate p2
+
     ' Adds lifeline block to p2
     p1 -> p2 ++
 
-    ' Adds a second lifeline block to p2
-    p2 -> p2 ++
+    ' Ends lifeline block on p2
+    p2 -> p1 --
 
-    ' Adds lifeline
-    p2 -> db ++
 
-    ' Creates new
-    db -> Object **
+    ' Creating and Destroying
 
-    ' return arrow
-    return
-    return
+    ' Creates a new participant p3 (doesn't appear with the rest at the top)
+    create p3
 
-    ' Ends lifeline with X
-    p2 -> Object !!
-    return
+    p1 -> p3
+        ' return keyword can be used instead of '--'
+        return
+
+    ' Destroys the new participant p3
+    ' Destroying puts a big cross on the lifeline of the object
+    destroy p3
+
+    ' Creates new participant called p4 (doesn't appear with the rest at the top)
+    p1 -> p4 **
+
+    ' It will add the cross on the end with the arrow
+    p1 -> p4 !!
 
  @enduml

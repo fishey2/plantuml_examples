@@ -38,8 +38,7 @@ To include the stylesheet example, use the [Live Include Stylesheet](https://gis
     1. [Splitting Groups using Else](04_Groups/04_group_else_splitting.plantuml)
 1. Lifelines
     1. [Defining Lifelines](05_Lifelines/01_defining_lifelines.plantuml)
-    1. [Activating and Deactivating](05_Lifelines/02_when_to_start_and_stop.plantuml)
-    1. [Shortcuts and Nested Processes](05_Lifelines/03_nested_process_lifelines.plantuml)
+    1. [Shortcuts and Nested Processes](05_Lifelines/02_nested_process_lifelines.plantuml)
 1. Notes
     1. [Defining Notes](06_Notes/01_defining_notes.plantuml)
     1. [Note Block](06_Notes/02_block_notes.plantuml)
