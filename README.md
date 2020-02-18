@@ -15,26 +15,8 @@ Live version of [Sequence Diagram Stylesheet](https://gist.githubusercontent.com
 
 For the plantuml documentation, click [HERE](https://plantuml.com/sequence-diagram)
 
+## Running and Configuring PlantUMl
 
-
-## Configuring the Chrome plugin
-
-Using the Chrome plugin, on the examples in Git you can click the Raw text. It will pick it up and convert it to a diragram in
-the browser
-
-
-## Configuring plantuml viewer in VSCode
-
-
-## Configuring plantuml viewer in IntelliJ
-
-
-## configuring plantuml viewer in atom
-Prerequisites JDK
-
-1. Installed plantuml-preview by ('peele')[]
-2. Installed language-plantuml for syntax highlighting
-3. Downloaded plantuml.jar
-4. Put jar into ${JAVA_HOME}/lib/plantuml.jar
-5. Change settings in Atom and add the path for plantuml.jar
+[Running and Configuring PlantUML](https://plantuml.com/running) provides a list of platforms that it has been
+integrated with and how to configure them correctly. 
 
