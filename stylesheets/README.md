@@ -6,7 +6,8 @@ To include the stylesheet example, use the [Hosted Stylesheet](https://gist.gith
 
 ```plantuml
 @startuml
-    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/fc90505df1321e5c5022eab84d1e0b5044194d1c/example_sequence_stylesheet.iuml
+    
+    !include https://gist.githubusercontent.com/fishey2/7178a88643a8850908c799be1ec68fd6/raw/4335aef48010a7597f14724597d8f391c4ab9c70/example_sequence_stylesheet.iuml
 
     ' SOMETHING
 @enduml

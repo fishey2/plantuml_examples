@@ -1,0 +1,33 @@
+#!/bin/bash
+set -Ee
+
+command="$1"
+
+PATH_TO_DOCKERFILE="docker/dojo-openjdk13"
+DOCKER_IMAGE="dojo-openjdk13"
+DOCKER_IMAGE_VERSION="latest"
+
+SEQUENCE_DIAGRAM_DIR="./sequence_diagrams/01_Hello_World/"
+PLANTUML_FILE="01_hello_world"
+OUTPUT_PATH="generated/"
+
+case "${command}" in
+    build_dojo_local)
+        echo "Building docker container ${DOCKER_IMAGE} locally"exi
+        docker build $PATH_TO_DOCKERFILE -t $DOCKER_IMAGE:$DOCKER_IMAGE_VERSION
+        ;;
+    _generate_diagrams_local)
+        export JAVA_HOME=/opt/java/openjdk
+        echo  ${JAVA_HOME}/bin/java -jar ./bin/plantuml.jar -o "${OUTPUT_PATH}" "${SEQUENCE_DIAGRAM_DIR}${PLANTUML_FILE}.plantuml"
+        ${JAVA_HOME}/bin/java -jar bin/plantuml.jar -o "${OUTPUT_PATH}" "${SEQUENCE_DIAGRAM_DIR}*.plantuml"
+        ;;
+    generate_diagrams_local)
+        echo "Building sequence diagrams"
+        dojo "./tasks _generate_diagrams_local"
+        ;;
+    *)
+        echo "Invalid command (tasks): '${command}'"
+        exit 1
+        ;;
+esac
+set +e
